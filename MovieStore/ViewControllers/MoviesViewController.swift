@@ -29,6 +29,10 @@ class MoviesViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func getMovies() {
+        print("get movies")
+    }
 }
 
 extension MoviesViewController: MovieServicceDelegate {
