@@ -19,6 +19,10 @@ class MoviesViewController: UIViewController {
         
         movieService.delegate = self
         movieService.getMovies(type: MovieType.popular, page: 1)
+        
+        movieService.getMovies(type: MovieType.popular, page: 2)
+        
+        movieService.getMovies(type: MovieType.popular, page: 3)
     }
 
     override func didReceiveMemoryWarning() {
