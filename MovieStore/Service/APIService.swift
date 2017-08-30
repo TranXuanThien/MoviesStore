@@ -46,6 +46,10 @@ class APIService: APIServiceProtocol {
             }
         }
     }
+    
+    func newsFunctionInMovie() {
+        print("abcdefgh")
+    }
 }
 
 extension APIService {
