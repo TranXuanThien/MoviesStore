@@ -53,10 +53,36 @@ class APIService: APIServiceProtocol {
     
     func develop1() {
         print("nnnnn")
+    }
 }
 
 extension APIService {
-    func getMovies(input: GetMoviesInput, completion: @escaping (GetMoviesResult) -> Void) {
+    func getMovies(input: GetMoviesInput?, completion: @escaping (GetMoviesResult) -> Void) {
+        request(input: input!) { (value, error) in
+            guard let json = value as? [String: Any] else {
+                completion(GetMoviesResult.failure(error: error as NSError?))
+                return
+            }
+            
+            if let jsons = json["results"] as? [[String: AnyObject]] {
+                var movies = [Movie]()
+                for json in jsons {
+                    if let movie = Movie(JSON: json) {
+                        movies.append(movie)
+                    }
+                }
+                completion(GetMoviesResult.success(movies: movies))
+            } else if let error = error {
+                completion(GetMoviesResult.failure(error: error as NSError?))
+            } else {
+                completion(GetMoviesResult.failure(error: nil))
+            }
+        }
+    }
+}
+
+extension APIService {
+    func getMovies2(input: GetMoviesInput, completion: @escaping (GetMoviesResult) -> Void) {
         request(input: input) { (value, error) in
             guard let json = value as? [String: Any] else {
                 completion(GetMoviesResult.failure(error: error as NSError?))
