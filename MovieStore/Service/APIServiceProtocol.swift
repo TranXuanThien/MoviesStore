@@ -10,5 +10,5 @@ import UIKit
 
 protocol APIServiceProtocol {
     // get movies
-    func getMovies(input: GetMoviesInput?, completion: @escaping(_ result: GetMoviesResult) -> Void)
+    func getMovies(input: GetMoviesInput, completion: @escaping(_ result: GetMoviesResult) -> Void)
 }
