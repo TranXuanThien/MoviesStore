@@ -23,6 +23,7 @@ class MoviesViewController: UIViewController {
         movieService.getMovies(type: MovieType.popular, page: 2)
         
         movieService.getMovies(type: MovieType.popular, page: 3)
+        print("acb")
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,8 +31,8 @@ class MoviesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getMovies() {
-        print("get movies")
+    func getlist() {
+        print("v1.0.0 is here")
     }
 }
 
