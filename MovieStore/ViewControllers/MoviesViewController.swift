@@ -21,10 +21,10 @@ class MoviesViewController: UIViewController {
         movieService.getMovies(type: MovieType.popular, page: 1)
         
         movieService.getMovies(type: MovieType.popular, page: 2)
-        movieService.getMovies(type: MovieType.popular, page: 5)
-        movieService.getMovies(type: MovieType.popular, page: 6)
-        movieService.getMovies(type: MovieType.popular, page: 7)
-        movieService.getMovies(type: MovieType.popular, page: 8)
+        movieService.getMovies(type: MovieType.popular, page: 51)
+        movieService.getMovies(type: MovieType.popular, page: 61)
+        movieService.getMovies(type: MovieType.popular, page: 71)
+        movieService.getMovies(type: MovieType.popular, page: 81)
 
         movieService.getMovies(type: MovieType.popular, page: 3)
         print("acb")
